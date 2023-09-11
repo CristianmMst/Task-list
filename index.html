@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task List</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      crossorigin="anonymous"
+      src="https://kit.fontawesome.com/d65958ccd9.js"
+    ></script>
+    <script
+      crossorigin="anonymous"
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    ></script>
+  </head>
+  <body>
+    <main class="container">
+      <nav class="navbar">
+        <h1 class="title">Task List</h1>
+      </nav>
+      <section class="task-container">
+        <div class="tasks"></div>
+      </section>
+      <div class="form-container">
+        <form class="form">
+          <h4>Añade una tarea a tu lista</h4>
+          <input id="add-task" type="text" placeholder="Tarea" />
+          <button type="submit">Añadir</button>
+        </form>
+      </div>
+      <div class="background-blur"></div>
+      <button class="btn-add-task" type="button">+</button>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

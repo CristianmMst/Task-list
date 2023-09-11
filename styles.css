@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+:root {
+  background-color: #f1f1f1;
+
+  --pink: #db6ac3;
+  --shadow: hsla(314, 34%, 18%, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 0.45rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--pink);
+}
+
+body {
+  margin: 0;
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  font-family: "Noto Sans", sans-serif, "Courier New", Courier, monospace;
+}
+
+.container {
+  width: 25rem;
+  position: relative;
+}
+
+.navbar {
+  width: 100%;
+  text-align: center;
+  padding-block: 1rem;
+  border-radius: 0.2rem;
+  background-color: var(--pink);
+  box-shadow: 2px 4px 8px var(--shadow);
+}
+
+.navbar .title {
+  margin: 0;
+  color: white;
+}
+
+.task-container {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  min-height: 18rem;
+  max-height: 18rem;
+  border-radius: 0.2rem;
+  background-color: white;
+  box-shadow: 2px 4px 15px var(--shadow);
+}
+
+.tasks {
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+  overflow-y: auto;
+  max-height: 14rem;
+  flex-direction: column;
+}
+
+.task {
+  display: flex;
+  padding-inline: 1rem;
+  justify-content: space-between;
+}
+.task .btn-task-delete {
+  border: none;
+  background-color: transparent;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: #5c5c5c;
+  margin-left: 4rem;
+  text-align: center;
+  position: relative;
+}
+
+label::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  top: 2px;
+  left: -50px;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #b4b4b4;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+input[type="radio"]:checked + label {
+  text-decoration: line-through;
+}
+input[type="radio"]:checked + label::before {
+  text-decoration: overline;
+  background-color: var(--pink);
+  box-shadow: inset 0 0 0 3px white;
+}
+
+.btn-add-task {
+  left: 50%;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  bottom: -30px;
+  color: white;
+  cursor: pointer;
+  font-size: 3rem;
+  position: absolute;
+  border-radius: 50%;
+  text-align: center;
+  transform: translate(-50%);
+  background-color: var(--pink);
+  box-shadow: 2px 4px 15px var(--shadow);
+}
+
+.form-container {
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+}
+.background-blur {
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  backdrop-filter: blur(5px);
+  transform: translate(-50%, -50%);
+  background-color: hsl(0, 0%, 0%, 0.3);
+}
+.form {
+  width: 20rem;
+  display: flex;
+  padding: 2rem;
+  height: 15rem;
+  align-items: center;
+  border-radius: 0.2rem;
+  flex-direction: column;
+  background-color: white;
+  justify-content: space-between;
+}
+.form h4 {
+  color: grey;
+  font-size: 0.9rem;
+  align-self: self-start;
+}
+.form input {
+  width: 100%;
+  color: grey;
+  outline: none;
+  border-radius: 0.2rem;
+  padding: 0.8rem 1rem 0.8rem 0.5rem;
+  transition: background-color 0.2s ease;
+  border: 1px solid hsl(0, 0%, 0%, 0.3);
+}
+.form button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 0.2rem;
+  padding-block: 0.8rem;
+  letter-spacing: 0.1rem;
+  background-color: var(--pink);
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--pink);
+}
+.info {
+  color: #5c5c5c;
+  font-size: 1.2rem;
+  text-align: center;
+}
